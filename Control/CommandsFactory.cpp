@@ -3,12 +3,32 @@
 //
 #include "CommandsFactory.h"
 #include "NewCommand.h"
+#include "LoadCmdmand.h"
 
-ICommand* CommandsFactory::getCommand(char* command)
+
+
+std::map<std::string,ICommand*>& CommandsFactory::getMap()
 {
-    if (command == NULL)
+    static std::map<std::string,ICommand*> mapiCommand;
+    return mapiCommand;
+}
+
+ICommand* CommandsFactory::getCommand(std::string command)
+{
+    std::map<std::string,ICommand*>::iterator it;
+    it = getMap().find(command);
+
+    if (it == getMap().end()) {
         return NULL;
-    if ((strcmp(command, "new")==0)||(strcmp(command,"New")==0))
-        return new NewCmd();
-    return NULL;
+    }
+    return it->second;
+}
+
+int CommandsFactory::registerCommand(std::string nameCommand,ICommand* iCommand )
+{
+    std::cout<<nameCommand<<std::endl;
+    std::pair<std::map<std::string,ICommand*>::iterator,bool> ret;
+    ret = getMap().insert(std::pair<std::string,ICommand*>(nameCommand,iCommand));
+
+    return ret.second?1:0;
 }

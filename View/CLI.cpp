@@ -3,14 +3,25 @@
 //
 #include <iostream>
 #include <string.h>
+#include <stdio.h>
 #include "CLI.h"
-
-void CLI::readFromUser()
+CLI::CLI()
 {
-    std::cout<<" --------In readCommand-----\n";
-    if(fgets(m_command, sizeof(m_command), stdin) == NULL) return;
+    prompt="> cmd >>>";
+}
+
+char* CLI::readFromUser()
+{
+    std::cout<<prompt;
+
+    if(fgets(m_command, sizeof(m_command), stdin) == NULL) return 0;
 
     if(m_command[strlen(m_command) -1] == '\n')
         m_command[strlen(m_command) -1] = '\0';
+    return m_command;
 }
 
+void CLI::printMessage(std::string m_message)
+{
+    std::cout<<m_message<<std::endl;
+}

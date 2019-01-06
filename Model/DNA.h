@@ -18,7 +18,7 @@ public:
 
     virtual ~Dna();
 
-    Dna& operator=(const Dna& dnaSequence);///////const?
+    //Dna& operator=(const Dna& dnaSequence);///////const?
     Dna& operator=(const std::string& d);
     Dna& operator=(const char* d);
 
@@ -29,7 +29,10 @@ public:
     bool operator==(const std::string Sequence)const;
     bool operator==(const char* Sequence)const;
     bool operator!=(const IDna* iDnaSequnce)const;
-    //virtual  void ptint(const IDna* iDnaSequnce)const;
+
+    virtual  std::string get()const;
+    virtual size_t getLength()const;
+
     friend ostream& operator<<(ostream& os, const Dna& dna);
     bool isValide(size_t len);
 
@@ -45,6 +48,8 @@ inline bool Dna::isValide(std::size_t len)
 {
     return (len % 3) == 0;
 }
+
+
 
 #endif //PROJECTDNA_DNA_H
 

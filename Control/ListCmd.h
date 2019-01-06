@@ -1,26 +1,26 @@
 //
-// Created by vebber on 12/27/18.
+// Created by vebber on 1/3/19.
 //
 
-#ifndef PROJECTDNA_NEWCOMMAND_H
-#define PROJECTDNA_NEWCOMMAND_H
+#ifndef PROJECTDNA_LISTCMD_H
+#define PROJECTDNA_LISTCMD_H
+#include <string>
+#include <list>
 
 #include "ICommand.h"
 #include "../Model/MetaData.h"
-#include <list>
+#include "../Model/CLIDataColection.h"
 
-class NewCmd:public ICommand
+class ListCmd:public ICommand
 {
 public:
     //virtual string help()=0;
-
     virtual void run(std::list<std::string> parameters,CLIDataColection& cliDataColection1);
     virtual std::string getmMessage();
 
 private:
-    static int NewCommand;
+    static  int ListCommand;
     std::string m_message;
-    static int numNameSeqDna;
-
 };
-#endif //PROJECTDNA_NEWCOMMAND_H
+
+#endif //PROJECTDNA_LISTCMD_H

@@ -5,11 +5,13 @@
 #ifndef PROJECTDNA_UIINTERFACE_H
 #define PROJECTDNA_UIINTERFACE_H
 
+#include <string>
 #define INTERFACE struct
 
 INTERFACE UiInterface
 {
-    virtual void readFromUser()=0;
+    virtual char* readFromUser()=0;
+    virtual void printMessage(std::string)=0;
 };
 
 #endif //PROJECTDNA_UIINTERFACE_H

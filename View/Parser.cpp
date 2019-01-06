@@ -2,27 +2,30 @@
 // Created by vebber on 12/26/18.
 //
 #include "Parser.h"
-#include <vector>
 #include <algorithm>
-#include <string.h>
+#include <cstring>
+#include <list>
+#define  DELIMETER  " "
 
-char** Parser::parse(char* line)
+
+std::list<std::string> Parser::parse(char* cli)
 {
-    char * currentPars;
-    int i=0;
+    parseData.clear();
 
-    currentPars= strtok (line," ");
-    while (currentPars != NULL)
+    char *word= strtok(cli, DELIMETER);
+
+    int i;
+
+    for (i=0 ;word ;++i)
     {
-        parseData[i]=new char[255];
-        strcpy(parseData[i++],currentPars);
-        currentPars= strtok (NULL," ");
+        parseData.push_back(word);
+        word =strtok(NULL, DELIMETER);
     }
     return parseData;
 }
 
 
-char** Parser::getParseData()
+std::list<std::string> Parser::getParseData()
 {
     return parseData;
 }

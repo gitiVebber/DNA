@@ -3,6 +3,8 @@
 //
 #include "DNA.h"
 #include <cstring>
+#include <sstream>
+#define LENGTH_TO_PRINT 32
 
 void Dna::init_DnaSequence(const char* dna)
 {
@@ -25,6 +27,10 @@ Dna::Dna(const char* dnaSequence)
         delete[] m_dnaSequence;
         throw std::invalid_argument("the Nucleotide is not valide");
     }
+    catch (const std::out_of_range& e)
+    {
+        throw std::invalid_argument(e.what());
+    }
 
 }
 
@@ -38,6 +44,10 @@ Dna::Dna(const std::string& dnaSequence_s)
     {
         delete[] m_dnaSequence;
         throw std::invalid_argument("the Nucleotide is not valide");
+    }
+    catch (const std::out_of_range& e)
+    {
+        throw std::invalid_argument(e.what());
     }
 }
 
@@ -65,23 +75,23 @@ Dna::Dna(const Dna& other, size_t from, size_t to)
     this->m_length = to - from;
 }
 
-Dna& Dna::operator=(const Dna& dnaSequence)
-{
-//    if (*this !=dnaSequence)
-//    {
-//        delete[] m_dnaSequence;
-//        m_length = dnaSequence.m_length;
-//        m_dnaSequence = new Nucleotide[m_length];
-//        for (size_t i = 0; i < m_length; i++)
-//            m_dnaSequence[i] = dnaSequence.m_dnaSequence[i];
-//    }
-//    return *this;
-}
+//Dna& Dna::operator=(const Dna& dnaSequence)
+//{
+////    if (*this !=dnaSequence)
+////    {
+////        delete[] m_dnaSequence;
+////        m_length = dnaSequence.m_length;
+////        m_dnaSequence = new Nucleotide[m_length];
+////        for (size_t i = 0; i < m_length; i++)
+////            m_dnaSequence[i] = dnaSequence.m_dnaSequence[i];
+////    }
+////    return *this;
+//}
 
 Dna& Dna::operator=(const std::string& d)
 {
     if (!isValide(strlen(d.c_str())))
-        throw std::out_of_range("the dna length is wrongful");
+        throw std::out_of_range("the dna length is wrongful!!!!!!!!!!!!!!!!!!!1");
     delete[] m_dnaSequence;
     m_length = strlen(d.c_str());
     m_dnaSequence = new Nucleotide[m_length];
@@ -93,7 +103,7 @@ Dna& Dna::operator=(const std::string& d)
 Dna& Dna::operator=(const char* d)
 {
     if (!isValide(strlen(d)))
-        throw std::out_of_range("the dna length is wrongful");
+        throw std::out_of_range("the dna length is wrongful!!!!!!!!!!!!!!!");
     delete[] m_dnaSequence;
     m_length = strlen(d);
     m_dnaSequence = new Nucleotide[m_length];
@@ -142,7 +152,7 @@ bool  Dna::operator==(const char* Sequence)const
 
 bool Dna::operator==(const std::string Sequence)const
 {
-    this->operator==(Sequence.c_str());
+    return this->operator==(Sequence.c_str());
 }
 
 bool Dna::operator!=(const IDna* dna)const
@@ -155,5 +165,26 @@ Nucleotide& Dna::operator[](const size_t index)
     if (index > m_length)
         throw std::invalid_argument("the location is out of range");
     return m_dnaSequence[index];
+}
+
+size_t  Dna::getLength() const
+{
+    return m_length;
+}
+std::string Dna::get() const
+{
+    std::stringstream DnaString;
+    for(size_t i=0;i<getLength() & i<LENGTH_TO_PRINT;++i)
+        DnaString<<m_dnaSequence[i];
+
+    if (getLength()>LENGTH_TO_PRINT) {
+
+        DnaString << "...";
+        DnaString << m_dnaSequence[getLength() - 3] << m_dnaSequence[getLength() - 2] << m_dnaSequence[getLength()-1];
+    }
+
+    return DnaString.str();
+
+
 }
 

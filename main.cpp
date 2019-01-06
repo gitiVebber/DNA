@@ -1,12 +1,13 @@
 #include <iostream>
 #include <cstdio>//gets
 #include <string.h>
-#include "../Model/Nucleotide.h"
-#include "../Model/DNA.h"
-#include "../View/UiInterface.h"
-#include "../View/Parser.h"
-#include "../View/CLI.h"
-#include "../Control/Executable.h"
+#include "Model/Nucleotide.h"
+#include "Model/DNA.h"
+#include "View/Parser.h"
+#include "View/CLI.h"
+#include "Control/Executable.h"
+#include "Model/CLIDataColection.h"
+#include "Model/WriteFileDna.h"
 bool testDnaCondChar()
 {
     const char *nucleotide="agcaaa";
@@ -18,21 +19,21 @@ bool testDnaCondChar()
 
 }
 
-bool unitTestEqual ()
-{
-    const std::string c = "aaa";
-    const char *c1 = "aaa";
-    Dna dna(c);
-    Dna dna1(c1);
-
-    if(dna ==&dna1)
-        return true;
-    return false;
-}
+//bool unitTestEqual ()
+//{
+//    const std::string c = "aaa";
+//    const char *c1 = "aaa";
+//    Dna dna(c);
+//    Dna dna1(c1);
+//
+//    if(dna ==&dna1)
+//        return true;
+//    return false;
+//}
 
 bool testOperatorEqual()
 {
-    std::string s = "ATGGTA";
+    char s[] = "ATGGTA";
     IDna * iDnaSequence = new Dna(s);
     Dna dnaSequence(s);
     if ((*iDnaSequence) == &dnaSequence)
@@ -124,22 +125,23 @@ int main() {
     std::cout <<"2 ";
     testOperatorEqual()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
     std::cout <<"3 ";
-    unitTestEqual()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
+//    unitTestEqual()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
 
 
 
-    UiInterface *Ui;
-    Parser parser;
-    IDna* iDna;
-
-    Ui=new CLI();
-    Ui->readFromUser();
-    parser.parse(((CLI*)Ui)->m_command);
-
-    Executable executable(parser.parse(((CLI*)Ui)->m_command),iDna);
-
-
-
+//    UiInterface *Ui;
+//    Parser parser;
+//    IDna* iDna;
+//
+//    Ui=new CLI();
+//    Ui->readFromUser();
+//    parser.parse(((CLI*)Ui)->m_command);
+//
+//    Executable executable(parser.parse(((CLI*)Ui)->m_command),iDna);
+    UiInterface* Ui=new CLI();
+    CLIDataColection cliDataColection;
+    Executable executable(Ui, &cliDataColection);
+    executable.Execut();
 
     return 0;
 }

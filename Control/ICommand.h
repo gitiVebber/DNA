@@ -7,13 +7,18 @@
 
 #include <string.h>
 #include "../Model/IDna.h"
-
+#include "../Model/CLIDataColection.h"
+#include <list>
 #define INTERFACE struct
 
 
 INTERFACE ICommand
 {
-    //virtual string help()=0;
-    virtual void run(char** &parameters,IDna* iDna)=0;
+public:
+    virtual void run(std::list<std::string> parameters,CLIDataColection& cliDataColection1)=0;
+    //virtual string help()=0
+    virtual std::string getmMessage()=0;
+
+    CLIDataColection cliDataColection;
 };
 #endif //PROJECTDNA_ICOMMAND_H

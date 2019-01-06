@@ -5,17 +5,21 @@
 #ifndef PROJECTDNA_CLI_H
 #define PROJECTDNA_CLI_H
 
+#include <string>
 #include "Parser.h"
 #include "UiInterface.h"
 
 class CLI:public UiInterface
 {
+
 public:
-    virtual void readFromUser();
-    char m_command[255];////////
+    CLI();
+    virtual char* readFromUser();
+    void printMessage(std::string m_message);
 
 private:
-
+    char m_command[256];
+    std::string prompt ;
     Parser parser;
 };
 
