@@ -15,11 +15,15 @@ public:
     std::string getAllIDna();
 
 //    void deleteIDna(std::string name);
-    MetaData* get(std::string name);
+    MetaData* get(std::string parameters);
+
 
 
 
 private:
+    MetaData* getById(size_t id);
+    MetaData* getByName(std::string name);
+
     std::map<size_t ,MetaData*> mapColectionById;
     std::map<std::string,MetaData*> mapColectionByName;
 };

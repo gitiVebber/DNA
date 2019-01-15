@@ -1,7 +1,7 @@
 #include "Nucleotide.h"
 #include <assert.h>
 
-Nucleotide Nucleotide::Nucleotide::pair()
+const Nucleotide Nucleotide::Nucleotide::pair()const
 {
     char pair ;
     switch (this->m_nucleotide)

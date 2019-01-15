@@ -2,6 +2,7 @@
 // Created by vebber on 12/27/18.
 //
 #include <string>
+#include <list>
 
 #include "Executable.h"
 #include "CommandsFactory.h"
@@ -23,15 +24,15 @@ void Executable::Execut()
         if(m_parser->getParseData().back().compare("exit")==0)
             break;
 
-        std::string  s=m_parser->getParseData().front();
+        std::list<std::string>allParameters=m_parser->getParseData();
+        std::string  s=allParameters.front();
 
         m_command = CommandsFactory::getCommand(s);
 
-//m_parser->getParseData().pop_front();
-
         if(m_command)
         {
-            m_command->run(m_parser->getParseData(),*m_cliDataColection);
+            allParameters.pop_front();
+            m_command->run(allParameters,*m_cliDataColection);
             m_uiInterface->printMessage(m_command->getmMessage());
         }
     }

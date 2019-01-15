@@ -22,18 +22,17 @@ public:
     Dna& operator=(const std::string& d);
     Dna& operator=(const char* d);
 
-
-    Nucleotide& operator[](const size_t index);
+    Nucleotide operator[](const size_t index);
 
     bool operator==(const IDna* iDnaSequnce)const;
     bool operator==(const std::string Sequence)const;
     bool operator==(const char* Sequence)const;
     bool operator!=(const IDna* iDnaSequnce)const;
 
-    virtual  std::string get()const;
+    //virtual  std::string get()const;
     virtual size_t getLength()const;
 
-    friend ostream& operator<<(ostream& os, const Dna& dna);
+//    friend ostream& operator<<(ostream& os, const Dna& dna);
     bool isValide(size_t len);
 
 private:

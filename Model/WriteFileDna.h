@@ -7,7 +7,8 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include "DNA.h"
+#include "IDna.h"
+#include "../Model/SharedPtr.h"
 
 using std::string;
 using std::ofstream;
@@ -18,10 +19,10 @@ class WriteFile
 private:
     string m_file_name;
 public:
-    WriteFile(const char * path);
+    WriteFile(const std::string  path);
     WriteFile(WriteFile const & other);
     ~WriteFile();
-    void write(const Dna dna);
+    void write(SharedPtr<IDna> dna);
 };
 
 #endif //PROJECTDNA_WRITEFILEDNA_H

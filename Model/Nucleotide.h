@@ -21,7 +21,7 @@ public:
     bool operator==(char nucleotide)const;
     bool operator!=(char nucleotide)const;
     friend ostream& operator<<(ostream& os, const Nucleotide& nucleotide);
-    Nucleotide pair();
+    const Nucleotide pair() const;
     char getM_nucleotide();
     void setM_nucleotide(char c);
 
@@ -77,3 +77,4 @@ inline void Nucleotide::setM_nucleotide(char c)
 
 
 #endif //PROJECTDNA_NUCLEOTIDE_H
+

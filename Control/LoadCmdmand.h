@@ -14,8 +14,10 @@ public:
     //virtual string help()=0;
     virtual void run(std::list<std::string> parameters,CLIDataColection& cliDataColection1);
     virtual std::string getmMessage();
+    void setMessage(MetaData *metaData1);
 
 private:
+    std::string getName(std::list<std::string> parameters,CLIDataColection& cliDataColection1);
     static  int LoadCommand;
     std::string m_message;
 

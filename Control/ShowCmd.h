@@ -16,8 +16,8 @@ class ShowCmd:public ICommand {
 public:
     //virtual string help()=0;
     virtual void run(std::list<std::string> parameters, CLIDataColection &cliDataColection1);
-
     virtual std::string getmMessage();
+    void setMessage(MetaData *metaData1);
 
 private:
     static int ShowCommand;

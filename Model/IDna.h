@@ -5,16 +5,23 @@
 #include <string>
 #ifndef PROJECTDNA_IDNA_H
 #define PROJECTDNA_IDNA_H
+
+
 class IDna
 {
 public:
     virtual ~IDna(){};
-    virtual Nucleotide& operator[](const size_t index)=0;
-    virtual bool operator==(const IDna* iDnaSequnce)const=0;
-    virtual bool operator!=(const IDna* iDnaSequnce)const=0;
-    virtual  std::string get()const=0;
+    virtual Nucleotide operator[](const size_t index)=0;
     virtual size_t getLength()const=0;
-
-
 };
+
+
+
+//inline ostream& operator<<(ostream& os, const IDna& iDna)
+//{
+//    for (size_t i = 0; i < iDna.getLength(); i++)
+//        os << *iDna[i];
+//    return os;
+//}
 #endif //PROJECTDNA_IDNA_H
+

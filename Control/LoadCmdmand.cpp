@@ -13,49 +13,37 @@
 
 int LoadCmd::LoadCommand=CommandsFactory::registerCommand("load",new LoadCmd);
 
-void LoadCmd::run(std::list<std::string> parameters,CLIDataColection& cliDataColection1)
-{
+void LoadCmd::run(std::list<std::string> parameters,CLIDataColection& cliDataColection1) {
 
     std::string name;
-    std::string tempName;
-    int numNameSeqDna=0;
-    bool nameAlreadyExists= true;
 
-    try
-    {
-        if (parameters.size()==3)
-            name = parameters.back().substr(1);
-        else
-            {
-            name=parameters.back().substr(0,parameters.back().find('.'));
-                tempName=name;
-                while(nameAlreadyExists)
-                {
-                    if(cliDataColection1.get(tempName)!=NULL)
-                        tempName=name+std::to_string(++numNameSeqDna);
-                    else
-                        nameAlreadyExists= false;
-                }
-                name=tempName;
-        }
-        parameters.pop_front();
+    try {
+        name=getName(parameters, cliDataColection1);
 
-        ReadFile* readFile=new ReadFile(parameters.front().c_str());
-        parameters.pop_front();
-        IDna* iDna=new Dna(readFile->read());
+        ReadFile *readFile = new ReadFile(parameters.front().c_str());
+        IDna *iDna = new Dna(readFile->read());
 
-        MetaData *metaData1=new MetaData(iDna,name);
-        parameters.clear();
+        MetaData *metaData1 = new MetaData(iDna, name);
         cliDataColection1.addIDna(metaData1);
 
-        std::stringstream message;
-        message << "[" << metaData1->getId() << "] " << metaData1->getName() << ": " << metaData1->getSequnce();
-        m_message = message.str();
+        setMessage(metaData1);
+
     }
     catch (std::invalid_argument &e)
     {
-        std::cout<<e.what();
+        m_message= e.what();
     }
+    catch (const char* err)
+    {
+        m_message=err;
+    }
+}
+
+void LoadCmd::setMessage(MetaData *metaData1)
+{
+    std::stringstream message;
+    message << "[" << metaData1->getId() << "] " << metaData1->getName() << ": " << metaData1->getSequnce();
+    m_message = message.str();
 }
 
 std::string LoadCmd::getmMessage()
@@ -63,4 +51,28 @@ std::string LoadCmd::getmMessage()
     return m_message;
 }
 
+
+std::string LoadCmd::getName(std::list<std::string> parameters,CLIDataColection& cliDataColection1)
+{
+    std::string name,tempName;
+    bool nameAlreadyExists= true;
+    int numNameSeqDna = 0;
+
+    if (parameters.size() == 2)
+        name = parameters.back().substr(1);
+
+    else {
+        name = parameters.back().substr(0, parameters.back().find('.'));
+        tempName = name;
+        while (nameAlreadyExists)
+        {
+            if (cliDataColection1.get("@"+tempName) != NULL)
+                tempName = name + std::to_string(++numNameSeqDna);
+            else
+                nameAlreadyExists = false;
+        }
+        name = tempName;
+    }
+    return name;
+}
 

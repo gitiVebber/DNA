@@ -5,6 +5,8 @@
 #ifndef PROJECTDNA_METADATA_H
 #define PROJECTDNA_METADATA_H
 
+#define LENGTH_TO_PRINT_SEQ 32
+
 
 #include "../Model/SharedPtr.h"
 #include "IDna.h"
@@ -26,13 +28,16 @@ public:
     size_t getId();
 
     void setSequnce(IDna* iDna);
-    std::string getSequnce();
+    std::string getSequnce(size_t length=LENGTH_TO_PRINT_SEQ);
 
     void setName(std::string name);
     std::string getName();
 
     void setStatus(Status status);
     const char* getStatus();
+    const char* getStatusSign();
+
+    SharedPtr<IDna> getIdna();
 
 
 

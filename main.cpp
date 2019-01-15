@@ -31,16 +31,16 @@ bool testDnaCondChar()
 //    return false;
 //}
 
-bool testOperatorEqual()
-{
-    char s[] = "ATGGTA";
-    IDna * iDnaSequence = new Dna(s);
-    Dna dnaSequence(s);
-    if ((*iDnaSequence) == &dnaSequence)
-        return true;
-    else
-        return false;
-}
+//bool testOperatorEqual()
+//{
+//    char s[] = "ATGGTA";
+//    IDna * iDnaSequence = new Dna(s);
+//    Dna dnaSequence(s);
+//    if ((*iDnaSequence) == &dnaSequence)
+//        return true;
+//    else
+//        return false;
+//}
 
 bool testNucleotideCondDefult()
 {
@@ -105,39 +105,29 @@ bool testNotValidNucleotideCond()
 int main() {
 
 
-    std::cout <<"1 ";
-    testNucleotideCondDefult()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
-    std::cout <<"2 ";
-    testNucleotideCond()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
-    std::cout <<"3 ";
-    testNotValidNucleotideCond()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
-    std::cout <<"4 ";
-    testNucleotideEqual()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
-    std::cout <<"5 ";
-    testNucleotide()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
-    std::cout <<"6 ";
-    testNucleotidePair()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
-    std::cout <<"7 ";
-    testNucleotide1()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
-    std::cout<<"TEST DNA:\n";
-    std::cout <<"1 ";
-    testDnaCondChar()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
-    std::cout <<"2 ";
-    testOperatorEqual()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
-    std::cout <<"3 ";
-//    unitTestEqual()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
+//    std::cout <<"1 ";
+//    testNucleotideCondDefult()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
+//    std::cout <<"2 ";
+//    testNucleotideCond()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
+//    std::cout <<"3 ";
+//    testNotValidNucleotideCond()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
+//    std::cout <<"4 ";
+//    testNucleotideEqual()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
+//    std::cout <<"5 ";
+//    testNucleotide()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
+//    std::cout <<"6 ";
+//    testNucleotidePair()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
+//    std::cout <<"7 ";
+//    testNucleotide1()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
+//    std::cout<<"TEST DNA:\n";
+//    std::cout <<"1 ";
+//    testDnaCondChar()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
+//    //std::cout <<"2 ";
+//    //testOperatorEqual()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
+//    //std::cout <<"3 ";
+////    unitTestEqual()?std::cout <<"true"<<std::endl :std::cout <<"false"<<std::endl;
 
 
-
-//    UiInterface *Ui;
-//    Parser parser;
-//    IDna* iDna;
-//
-//    Ui=new CLI();
-//    Ui->readFromUser();
-//    parser.parse(((CLI*)Ui)->m_command);
-//
-//    Executable executable(parser.parse(((CLI*)Ui)->m_command),iDna);
     UiInterface* Ui=new CLI();
     CLIDataColection cliDataColection;
     Executable executable(Ui, &cliDataColection);

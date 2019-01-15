@@ -47,7 +47,7 @@ Dna::Dna(const std::string& dnaSequence_s)
     }
     catch (const std::out_of_range& e)
     {
-        throw std::invalid_argument(e.what());
+        throw std::out_of_range(e.what());
     }
 }
 
@@ -113,12 +113,12 @@ Dna& Dna::operator=(const char* d)
 
 }
 
-ostream& operator<<(ostream& os, const Dna& dna)
-{
-    for (size_t i = 0; i < dna.m_length; i++)
-        os << dna.m_dnaSequence[i];
-    return os;
-}
+//ostream& operator<<(ostream& os, const Dna& dna)
+//{
+//    for (size_t i = 0; i < dna.m_length; i++)
+//        os << dna.m_dnaSequence[i];
+//    return os;
+//}
 
 
 
@@ -160,7 +160,7 @@ bool Dna::operator!=(const IDna* dna)const
     return !(m_dnaSequence ==((Dna*)dna)->m_dnaSequence);
 }
 
-Nucleotide& Dna::operator[](const size_t index)
+Nucleotide Dna::operator[](const size_t index)
 {
     if (index > m_length)
         throw std::invalid_argument("the location is out of range");
@@ -171,20 +171,20 @@ size_t  Dna::getLength() const
 {
     return m_length;
 }
-std::string Dna::get() const
-{
-    std::stringstream DnaString;
-    for(size_t i=0;i<getLength() & i<LENGTH_TO_PRINT;++i)
-        DnaString<<m_dnaSequence[i];
-
-    if (getLength()>LENGTH_TO_PRINT) {
-
-        DnaString << "...";
-        DnaString << m_dnaSequence[getLength() - 3] << m_dnaSequence[getLength() - 2] << m_dnaSequence[getLength()-1];
-    }
-
-    return DnaString.str();
-
-
-}
-
+//std::string Dna::get() const
+//{
+//    std::stringstream DnaString;
+//    for(size_t i=0;i<getLength() & i<LENGTH_TO_PRINT;++i)
+//        DnaString<<m_dnaSequence[i];
+//
+//    if (getLength()>LENGTH_TO_PRINT) {
+//
+//        DnaString << "...";
+//        DnaString << m_dnaSequence[getLength() - 3] << m_dnaSequence[getLength() - 2] << m_dnaSequence[getLength()-1];
+//    }
+//
+//    return DnaString.str();
+//
+//
+//}
+//
