@@ -8,19 +8,17 @@
 #include <string>
 #include <list>
 
-#include "ICommand.h"
-#include "../Model/MetaData.h"
-#include "../Model/CLIDataColection.h"
+#include "../Command.h"
+#include "../../Model/MetaData.h"
+#include "../../Model/CLIDataColection.h"
 
-class ShowCmd:public ICommand {
+class ShowCmd:public Command{
 public:
     //virtual string help()=0;
     virtual void run(std::list<std::string> parameters, CLIDataColection &cliDataColection1);
-    virtual std::string getmMessage();
-    void setMessage(MetaData *metaData1);
 
 private:
     static int ShowCommand;
-    std::string m_message;
+
 };
 #endif //PROJECTDNA_SHOWCMD_H

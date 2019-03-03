@@ -7,20 +7,18 @@
 #include <string>
 #include <list>
 
-#include "ICommand.h"
-#include "../Model/MetaData.h"
-#include "../Model/CLIDataColection.h"
+#include "../Command.h"
+#include "../../../Model/MetaData.h"
+#include "../../../Model/CLIDataColection.h"
 
-class ListCmd:public ICommand
+class ListCmd:public Command
 {
 public:
     //virtual string help()=0;
     virtual void run(std::list<std::string> parameters,CLIDataColection& cliDataColection1);
-    virtual std::string getmMessage();
 
 private:
     static  int ListCommand;
-    std::string m_message;
 };
 
 #endif //PROJECTDNA_LISTCMD_H

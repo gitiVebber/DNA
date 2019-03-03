@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 #include "IDna.h"
-#include "../Model/SharedPtr.h"
+#include "../Helper/SharedPtr.h"
 
 using std::string;
 using std::ofstream;

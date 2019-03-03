@@ -17,8 +17,8 @@ ReadFile::ReadFile(const char *path)
 ReadFile::ReadFile(ReadFile const & other):m_file_name(other.m_file_name){}
 ReadFile::~ReadFile(){}
 
-Dna ReadFile:: read()
+std::string ReadFile:: read()
 {
-    Dna DNA(m_file_name);
-    return DNA;
+    //Dna DNA(m_file_name);
+    return m_file_name;
 }

@@ -7,16 +7,16 @@
 #include <string>
 #include <list>
 
-#include "ICommand.h"
-#include "../Model/MetaData.h"
-#include "../Model/CLIDataColection.h"
+#include "../ICommand.h"
+#include "../../Model/MetaData.h"
+#include "../../Model/CLIDataColection.h"
 
 class SaveCmd:public ICommand
 {
 public:
     //virtual string help()=0;
     virtual void run(std::list<std::string> parameters,CLIDataColection& cliDataColection1);
-    virtual std::string getmMessage();
+    virtual std::string getmMessage()const ;
     void setMessage(MetaData *metaData1);
 
 

@@ -47,7 +47,7 @@ public:
     ReadFile(const char * path);
     ReadFile(ReadFile const & other);
     ~ReadFile();
-    Dna read();
+    std::string read();
 };
 
 

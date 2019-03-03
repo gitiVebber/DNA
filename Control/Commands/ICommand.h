@@ -17,8 +17,7 @@ INTERFACE ICommand
 public:
     virtual void run(std::list<std::string> parameters,CLIDataColection& cliDataColection1)=0;
     //virtual string help()=0
-    virtual std::string getmMessage()=0;
+    virtual std::string getmMessage()const =0;
 
-    CLIDataColection cliDataColection;
 };
 #endif //PROJECTDNA_ICOMMAND_H

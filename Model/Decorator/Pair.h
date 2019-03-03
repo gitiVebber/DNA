@@ -6,7 +6,7 @@
 #define PROJECTDNA_PAIR_H
 
 #include "IDna.h"
-#include "../Model/SharedPtr.h"
+#include "../Helper/SharedPtr.h"
 
 class Pair : public IDna
 {

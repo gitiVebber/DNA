@@ -5,9 +5,9 @@
 #include <sstream>
 
 #include "SaveCmd.h"
-#include "../Model/WriteFileDna.h"
-#include "CommandsFactory.h"
-#include "../Model/DNA.h"
+#include "../../Model/Files/WriteFileDna.h"
+#include "../CommandsFactory.h"
+#include "../../Model/DNA.h"
 
 
 int SaveCmd::SaveCommand =CommandsFactory::registerCommand("save",new SaveCmd);
@@ -98,7 +98,7 @@ void SaveCmd::run(std::list<std::string> parameters,CLIDataColection& cliDataCol
 //    m_message = message.str();
 //}
 //
-std::string SaveCmd::getmMessage()
+std::string SaveCmd::getmMessage()const
 {
     return m_message;
 }
