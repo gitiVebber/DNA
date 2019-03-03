@@ -4,8 +4,8 @@
 
 #include <sstream>
 #include "PairCmd.h"
-#include "../../Model/Decorator/Pair.h"
-#include "../CommandsFactory.h"
+#include "../../../Model/Decorator/Pair.h"
+#include "../../CommandsFactory.h"
 #define CHAR_FOR_DEFALT_NAME 'p'
 #define LITTEL_NUMBER_FOR_ARGS 1
 #define MUCH_NUMBER_FOR_ARGS 3

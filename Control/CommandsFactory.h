@@ -6,7 +6,7 @@
 #define PROJECTDNA_COMMANDSFACTORY_H
 #include <map>
 #include <string>
-#include "ICommand.h"
+#include "Commands/ICommand.h"
 
 
 class  CommandsFactory {

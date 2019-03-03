@@ -6,7 +6,7 @@
 #define PROJECTDNA_NEWCOMMAND_H
 
 #include "Creation.h"
-#include "../../Model/MetaData.h"
+#include "../../../Model/MetaData.h"
 #include <list>
 
 class NewCmd:public Creation

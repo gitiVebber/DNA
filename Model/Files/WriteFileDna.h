@@ -7,8 +7,8 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include "IDna.h"
-#include "../Helper/SharedPtr.h"
+#include "../IDna.h"
+#include "../../Helper/SharedPtr.h"
 
 using std::string;
 using std::ofstream;

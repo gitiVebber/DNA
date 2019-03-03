@@ -4,8 +4,8 @@
 
 #include <sstream>
 #include "SliceCmd.h"
-#include "../../Model/Decorator/Slice.h"
-#include "../CommandsFactory.h"
+#include "../../../Model/Decorator/Slice.h"
+#include "../../CommandsFactory.h"
 #define CHAR_FOR_DEFALT_NAME 's'
 #define LITTEL_NUMBER_FOR_ARGS 3
 #define MUCH_NUMBER_FOR_ARGS 5

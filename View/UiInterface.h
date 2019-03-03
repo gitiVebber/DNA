@@ -12,6 +12,7 @@ INTERFACE UiInterface
 {
     virtual char* readFromUser()=0;
     virtual void printMessage(std::string)=0;
+    virtual ~UiInterface(){}
 };
 
 #endif //PROJECTDNA_UIINTERFACE_H

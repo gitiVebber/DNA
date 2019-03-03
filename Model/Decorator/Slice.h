@@ -5,8 +5,8 @@
 #ifndef PROJECTDNA_SLICE_H
 #define PROJECTDNA_SLICE_H
 
-#include "../Helper/SharedPtr.h"
-#include "IDna.h"
+#include "../../Helper/SharedPtr.h"
+#include "../IDna.h"
 
 class Slice : public IDna {
 

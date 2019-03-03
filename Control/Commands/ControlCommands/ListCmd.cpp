@@ -2,8 +2,8 @@
 // Created by vebber on 1/3/19.
 //
 #include "ListCmd.h"
-#include "../../Model/Files/WriteFileDna.h"
-#include "../CommandsFactory.h"
+#include "../../../Model/Files/WriteFileDna.h"
+#include "../../CommandsFactory.h"
 
 #define LITTEL_NUMBER_FOR_ARGS 0
 #define MUCH_NUMBER_FOR_ARGS 0

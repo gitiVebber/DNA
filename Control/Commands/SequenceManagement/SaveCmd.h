@@ -8,8 +8,8 @@
 #include <list>
 
 #include "../ICommand.h"
-#include "../../Model/MetaData.h"
-#include "../../Model/CLIDataColection.h"
+#include "../../../Model/MetaData.h"
+#include "../../../Model/CLIDataColection.h"
 
 class SaveCmd:public ICommand
 {

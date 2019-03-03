@@ -72,9 +72,5 @@ inline void Nucleotide::setM_nucleotide(char c)
     }
 }
 
-
-
-
-
 #endif //PROJECTDNA_NUCLEOTIDE_H
 

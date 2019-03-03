@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "CLI.h"
+
 CLI::CLI()
 {
     prompt="> cmd >>>";

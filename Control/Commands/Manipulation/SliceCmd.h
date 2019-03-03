@@ -6,7 +6,7 @@
 #define PROJECTDNA_SLICECMD_H
 
 #include "Manipulation.h"
-#include "../../Model/MetaData.h"
+#include "../../../Model/MetaData.h"
 #include <list>
 
 class SliceCmd:public Manipulation {

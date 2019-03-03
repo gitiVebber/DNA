@@ -6,8 +6,8 @@
 #define PROJECTDNA_ICOMMAND_H
 
 #include <string.h>
-#include "../Model/IDna.h"
-#include "../Model/CLIDataColection.h"
+#include "../../Model/IDna.h"
+#include "../../Model/CLIDataColection.h"
 #include <list>
 #define INTERFACE struct
 

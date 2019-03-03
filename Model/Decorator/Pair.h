@@ -5,8 +5,8 @@
 #ifndef PROJECTDNA_PAIR_H
 #define PROJECTDNA_PAIR_H
 
-#include "IDna.h"
-#include "../Helper/SharedPtr.h"
+#include "../IDna.h"
+#include "../../Helper/SharedPtr.h"
 
 class Pair : public IDna
 {

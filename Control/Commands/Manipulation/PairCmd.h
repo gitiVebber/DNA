@@ -6,7 +6,7 @@
 #define PROJECTDNA_PAIRCMD_H
 
 #include "Manipulation.h"
-#include "../../Model/MetaData.h"
+#include "../../../Model/MetaData.h"
 #include <list>
 #include "Manipulation.h"
 

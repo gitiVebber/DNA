@@ -75,23 +75,10 @@ Dna::Dna(const Dna& other, size_t from, size_t to)
     this->m_length = to - from;
 }
 
-//Dna& Dna::operator=(const Dna& dnaSequence)
-//{
-////    if (*this !=dnaSequence)
-////    {
-////        delete[] m_dnaSequence;
-////        m_length = dnaSequence.m_length;
-////        m_dnaSequence = new Nucleotide[m_length];
-////        for (size_t i = 0; i < m_length; i++)
-////            m_dnaSequence[i] = dnaSequence.m_dnaSequence[i];
-////    }
-////    return *this;
-//}
-
 Dna& Dna::operator=(const std::string& d)
 {
     if (!isValide(strlen(d.c_str())))
-        throw std::out_of_range("the dna length is wrongful!!!!!!!!!!!!!!!!!!!1");
+        throw std::out_of_range("the dna length is wrongful!");
     delete[] m_dnaSequence;
     m_length = strlen(d.c_str());
     m_dnaSequence = new Nucleotide[m_length];
@@ -103,7 +90,7 @@ Dna& Dna::operator=(const std::string& d)
 Dna& Dna::operator=(const char* d)
 {
     if (!isValide(strlen(d)))
-        throw std::out_of_range("the dna length is wrongful!!!!!!!!!!!!!!!");
+        throw std::out_of_range("the dna length is wrongful!");
     delete[] m_dnaSequence;
     m_length = strlen(d);
     m_dnaSequence = new Nucleotide[m_length];
@@ -112,17 +99,6 @@ Dna& Dna::operator=(const char* d)
     return *this;
 
 }
-
-//ostream& operator<<(ostream& os, const Dna& dna)
-//{
-//    for (size_t i = 0; i < dna.m_length; i++)
-//        os << dna.m_dnaSequence[i];
-//    return os;
-//}
-
-
-
-
 
 bool Dna::operator==(const IDna* dna)const
 {
@@ -171,20 +147,3 @@ size_t  Dna::getLength() const
 {
     return m_length;
 }
-//std::string Dna::get() const
-//{
-//    std::stringstream DnaString;
-//    for(size_t i=0;i<getLength() & i<LENGTH_TO_PRINT;++i)
-//        DnaString<<m_dnaSequence[i];
-//
-//    if (getLength()>LENGTH_TO_PRINT) {
-//
-//        DnaString << "...";
-//        DnaString << m_dnaSequence[getLength() - 3] << m_dnaSequence[getLength() - 2] << m_dnaSequence[getLength()-1];
-//    }
-//
-//    return DnaString.str();
-//
-//
-//}
-//

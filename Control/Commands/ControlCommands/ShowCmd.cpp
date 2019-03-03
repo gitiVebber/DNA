@@ -3,8 +3,8 @@
 //
 #include <sstream>
 #include "ShowCmd.h"
-#include "../../Model/Files/WriteFileDna.h"
-#include "../CommandsFactory.h"
+#include "../../../Model/Files/WriteFileDna.h"
+#include "../../CommandsFactory.h"
 
 #define LITTEL_NUMBER_FOR_ARGS 1
 #define MUCH_NUMBER_FOR_ARGS 2

@@ -35,7 +35,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include "DNA.h"
+#include "../DNA.h"
 using std::string;
 using std::ifstream;
 

@@ -9,8 +9,8 @@
 #include <list>
 
 #include "../Command.h"
-#include "../../Model/MetaData.h"
-#include "../../Model/CLIDataColection.h"
+#include "../../../Model/MetaData.h"
+#include "../../../Model/CLIDataColection.h"
 
 class ShowCmd:public Command{
 public:

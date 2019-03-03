@@ -2,11 +2,11 @@
 // Created by vebber on 1/15/19.
 //
 
-#include "../../Model/MetaData.h"
+#include "../../../Model/MetaData.h"
 #include "DupCmd.h"
-#include "../../Model/DNA.h"
-#include "../CommandsFactory.h"
-#include "../../Model/CLIDataColection.h"
+#include "../../../Model/DNA.h"
+#include "../../CommandsFactory.h"
+#include "../../../Model/CLIDataColection.h"
 
 #include <sstream>
 #include <iostream>

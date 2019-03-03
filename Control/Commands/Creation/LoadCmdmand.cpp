@@ -1,15 +1,15 @@
 //
 // Created by vebber on 1/1/19.
 //
-#include "../../Model/MetaData.h"
+#include "../../../Model/MetaData.h"
 
 
 #include <sstream>
 #include <iostream>
-#include "../../Model/Files/ReadFileDna.h"
+#include "../../../Model/Files/ReadFileDna.h"
 #include "LoadCmdmand.h"
-#include "../CommandsFactory.h"
-#include "../../Model/CLIDataColection.h"
+#include "../../CommandsFactory.h"
+#include "../../../Model/CLIDataColection.h"
 
 #define CHAR_FOR_DEFALT_NAME "seq"
 #define LITTEL_NUMBER_FOR_ARGS 1

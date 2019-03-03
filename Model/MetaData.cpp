@@ -91,11 +91,5 @@ SharedPtr<IDna> MetaData::getIdna()
     return m_sequnce;
 }
 
-//std::string get()
-//{
-//
-//}
-
-
 
 

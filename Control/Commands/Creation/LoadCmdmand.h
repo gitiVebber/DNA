@@ -5,7 +5,7 @@
 #ifndef PROJECTDNA_LOADCMDMAND_H
 #define PROJECTDNA_LOADCMDMAND_H
 #include "Creation.h"
-#include "../../Model/MetaData.h"
+#include "../../../Model/MetaData.h"
 #include <list>
 
 class LoadCmd:public Creation

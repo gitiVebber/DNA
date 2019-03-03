@@ -18,7 +18,6 @@ public:
 
     virtual ~Dna();
 
-    //Dna& operator=(const Dna& dnaSequence);///////const?
     Dna& operator=(const std::string& d);
     Dna& operator=(const char* d);
 

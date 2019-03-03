@@ -6,7 +6,7 @@
 
 #include "Executable.h"
 #include "CommandsFactory.h"
-#include "ICommand.h"
+#include "Commands/ICommand.h"
 
 
 Executable::Executable(UiInterface* Ui,CLIDataColection* cliDataColection)

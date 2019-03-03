@@ -7,7 +7,7 @@
 #include "View/CLI.h"
 #include "Control/Executable.h"
 #include "Model/CLIDataColection.h"
-#include "Model/WriteFileDna.h"
+#include "Model/Files/WriteFileDna.h"
 bool testDnaCondChar()
 {
     const char *nucleotide="agcaaa";

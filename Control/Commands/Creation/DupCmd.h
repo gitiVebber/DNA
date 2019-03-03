@@ -6,7 +6,7 @@
 #define PROJECTDNA_DUPCMD_H
 
 #include "Creation.h"
-#include "../../Model/MetaData.h"
+#include "../../../Model/MetaData.h"
 #include <list>
 
 class DupCmd :public Creation {

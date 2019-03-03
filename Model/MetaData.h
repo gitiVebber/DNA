@@ -8,7 +8,7 @@
 #define LENGTH_TO_PRINT_SEQ 32
 
 
-#include "../Model/SharedPtr.h"
+#include "../Helper/SharedPtr.h"
 #include "IDna.h"
 #include <map>
 
@@ -38,9 +38,6 @@ public:
     const char* getStatusSign();
 
     SharedPtr<IDna> getIdna();
-
-
-
 
 private:
     static size_t nextID;
