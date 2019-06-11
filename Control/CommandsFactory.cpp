@@ -30,5 +30,5 @@ int CommandsFactory::registerCommand(std::string nameCommand,ICommand* iCommand 
     std::pair<std::map<std::string,ICommand*>::iterator,bool> ret;
     ret = getMap().insert(std::pair<std::string,ICommand*>(nameCommand,iCommand));
 
-    return ret.second?1:0;
+    return ret.second? 1 : 0;
 }
